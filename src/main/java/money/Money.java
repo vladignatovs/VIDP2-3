@@ -57,12 +57,16 @@ public class Money {
     }
 
     public boolean lessThan(Money b) {
-        if (this.euros <= b.euros) {
-            if (this.cents < b.cents) {
-                return true;
+        if (this.euros < b.euros) {
+            return true;
+        } else { 
+            if (this.euros == b.euros) {
+                if (this.cents < b.cents) {
+                    return true;
+                }
+                return false;
             }
             return false;
         }
-        return false;
     }
 }
