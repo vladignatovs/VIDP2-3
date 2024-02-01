@@ -8,15 +8,21 @@ public class Money {
         this.euros = euros;
         this.cents = cents;
     }
+    public Money(int euros) {
+        this.euros = euros;
+        this.cents = 0;
+    }
+    public Money() {
+        this.euros = 0;
+        this.cents = 0;
+    }
 
     public int euros() {
         return euros;
     }
-
     public int cents() {
         return cents;
     }
-
     public String toString() {
         String zero = "";
         if (cents < 10) {
@@ -67,6 +73,23 @@ public class Money {
                 return false;
             }
             return false;
+        }
+    }
+
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+
+        if (!(that instanceof Money)) {
+            return false;
+        }
+
+        Money thatMoney = (Money) that;
+        if (this. euros == thatMoney.euros && this.cents == thatMoney.cents) {
+            return true;
+        } { 
+            return false; 
         }
     }
 }
